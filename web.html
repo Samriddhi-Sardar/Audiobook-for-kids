@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: verdana;
+      margin: 0;
+    }
+
+    .background-container {
+      background-color: black;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Resetting default margin and padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Style for the header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: rgb(10, 35, 164); /* Optional background color */
+    }
+
+    /* Style for the logo */
+    .logo img {
+      max-width: 100px; /* Adjust the width as needed */
+    }
+
+    /* Style for the search container */
+    .search-container {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Define the glow animation */
+    .heading {
+      font-family: cursive;
+      text-align: center;
+      color: rgb(243, 238, 238);
+      animation: glow-animation 4s ease-in-out infinite;
+    }
+
+    @keyframes glow-animation {
+      0% {
+        text-shadow: 0 0 5px rgba(172, 170, 170, 0.5); /* Initial shadow */
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(247, 244, 244, 0.8); /* Stronger shadow at 50% of animation */
+      }
+      100% {
+        text-shadow: 0 0 5px rgba(247, 245, 245, 0.5); /* Return to initial shadow */
+      }
+    }
+
+    /* Style for the input field */
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 5px 0 0 5px;
+      border: 1px solid #ccc;
+      width: 200px;
+    }
+
+    /* Style for the search button */
+    button[type="submit"] {
+      padding: 10px 15px;
+      border: none;
+      background: black;
+      color: white;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    /* Style for the button on hover */
+    button[type="submit"]:hover {
+      background: #0056b3;
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color: gray;
+    }
+
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: lightcyan;
+    }
+
+    /* Style for the second navbar at the top left corner */
+    .top-right-navbar {
+      overflow: hidden;
+      background-color: rgb(23, 18, 40);
+    }
+
+    .top-right-navbar a {
+      float: right;
+      font-size: 16px;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .top-right-navbar a:hover {
+      background-color: gray;
+      color: black;
+    }
+
+    /* Resetting default margin and padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Style for the audio player */
+    audio {
+      width: 16%;
+      margin-top: 10px;
+    }
+
+    .center-content {
+      background: url("tangled.jpg") center/cover no-repeat;
+      padding: 300px; /* Updated padding */
+      height: auto; /* Updated height */
+      width: 80%;
+      border-radius: 2px;
+      text-align: center;
+      position: relative;
+      margin: 0 auto; /* Center horizontally */
+    }
+    .left-content {
+      padding: 30px;
+      height: 15%;
+      width: 30%;
+      border-radius: 2px;
+      text-align: center;
+      color: #fff; /* Set text color */
+      position: relative;
+      margin-right: auto; /* Shift to the left */
+    }
+    /* Style for the heading "NEW RELEASE" */
+.left-content h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  color: black;
+  animation: color-changing-glow 2s ease-in-out infinite;
+}
+
+@keyframes color-changing-glow {
+  0% {
+    color: red; /* Initial color */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Initial shadow */
+  }
+  25% {
+    color: yellow; /* Color change at 25% of animation */
+    text-shadow: 0 0 20px rgba(255, 255, 0, 0.8); /* Yellow glowing shadow at 25% of animation */
+  }
+  50% {
+    color: green; /* Color change at 50% of animation */
+    text-shadow: 0 0 20px rgba(0, 128, 0, 0.8); /* Green glowing shadow at 50% of animation */
+  }
+  100% {
+    color: red; /* Return to initial color */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Return to initial shadow */
+  }
+}
+
+@keyframes red-glow-animation {
+  0% {
+    color: red; /* Initial color */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Initial shadow */
+  }
+  50% {
+    color: red; /* Color stays red at 50% of animation */
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* Red glowing shadow at 50% of animation */
+  }
+  100% {
+    color: red; /* Return to initial color */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Return to initial shadow */
+  }
+}
+/* Style for the heading "STREAM NOW" */
+.left-content h3 {
+  text-align: center;
+  color: rgb(13, 149, 154);
+  font-size: 24px;
+  animation: blue-glow-animation 1.5s ease-in-out infinite;
+}
+
+@keyframes blue-glow-animation {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Initial shadow with blue color */
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 0, 255, 0.8); /* Stronger shadow at 50% of animation */
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Return to initial shadow */
+  }
+}
+h3{
+color:white;
+}
+.center-content audio {
+  width: 50%; /* Adjust the width as needed */
+  margin-top: 20px; /* Updated margin-top */
+  
+}
+
+/* Additional styling for the audio player controls in the center content */
+.center-content audio::-webkit-media-controls-panel {
+  background-color: rgba(241, 233, 233, 0.901);
+  border-radius: 10px;
+}
+
+.center-content audio::-webkit-media-controls-play-button {
+  color: white;
+}
+
+.center-content audio::-webkit-media-controls-volume-slider {
+  background-color: transparent;
+}
+/* Additional styling for the "Click here" text */
+.center-content p {
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+  animation: click-here-animation 1.5s ease-in-out infinite;
+}
+
+@keyframes click-here-animation {
+  0% {
+    color: rgb(255, 0, 0); /* Initial color */
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.5); /* Initial shadow */
+  }
+  100% {
+    color: rgb(255, 0, 221); /* Return to initial color */
+    text-shadow: 0 0 5px rgba(253, 28, 28, 0.5); /* Return to initial shadow */
+  }
+}
+/* Style for the footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 5px;
+}
+/* Keyframes for color-changing effect */
+@keyframes color-change {
+  0% {
+    color: #ffffff; /* Initial color */
+  }
+  50% {
+    color: #ff0000; /* Intermediate color */
+  }
+  100% {
+    color: #ffffff; /* Final color */
+  }
+}
+
+/* Apply animation to the "more stories" link */
+a[href="#more-stories"] {
+  animation: color-change 2s infinite; /* Apply the animation */
+  text-decoration: none; /* Remove underline */
+}
+
+  </style>
+</head>
+
+<body bgcolor="black">
+  <!-- First Navbar -->
+  <div class="top-right-navbar">
+    <a href="#">Terms of Use</a>
+    <a href="#">Copyright Policy</a>
+    <a href="#">Privacy Policy❗</a>
+    <a href="#">About</a>
+    <a href="#">FAQ</a>
+    <a href="#">Home</a>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img src="C:\Users\91983\Downloads\Rj-removebg-preview.png" alt="Logo">
+    </div>
+    <div class="heading">
+      <h1>WELCOME TO STORYTIME</h1>
+    </div>
+    <div class="search-container">
+      <form action="#">
+        <input type="text" placeholder="Search..." name="search">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Second Navbar -->
+  <br>
+  <div class="navbar">
+    <a href="#">ALL STORIES</a>
+    <a href="#">AUDIO STORIES</a>
+    <a href="#">FAIRY TALES</a>
+    <a href="#">POEMS</a>
+    <a href="#">CLASSIC STORIES</a>
+    <a href="#">CHRISTMAS STORIES</a>
+    <a href="#">SCARY STORIES</a>
+    <a href="#">SEASONAL STORIES</a>
+    <a href="#">PREMIUM</a>
+  </div>
+
+  <div class="background-container">
+      <div class="left-content">
+        <h1>NEW RELEASE</h1><br>
+        <p></p><img src="C:\Users\91983\Downloads\playy-removebg-preview.png" width="5%"><br>    1.3 M plays</p><br>
+      <p><img src="C:\Users\91983\Downloads\rev-removebg-preview.png" width="20%"><br>50k reviews</p><br>
+      <p><img src="C:\Users\91983\Downloads\rating-removebg-preview.png" width="20%"><br>4.5 ratings</p><br><br>
+    <h3>STREAM NOW</h3></div>
+         <div class="center-content">
+          <p><b>👇Click here👇</b></p>
+      <audio controls>
+        <source src="C:\Users\91983\Downloads\Tangled.mp3" type="audio/mp3">
+      </audio>
+         </div></div>
+       
+      <h3 align="center" ><b> <i><u>Top Rated Audio Stories</u></i></b> </h3><br>
+      <div class="content">
+        <img src="C:\Users\91983\Desktop\WEBTech\Beauty.jpg" width="16%">
+        <img src="C:\Users\91983\Desktop\WEBTech\uu.jpeg" width="16%">
+        <img src="C:\Users\91983\Desktop\WEBTech\cin.jpeg" width="16%">
+        <img src="C:\Users\91983\Desktop\WEBTech\aladdin.jpeg" width="16%">
+        <img src="C:\Users\91983\Desktop\WEBTech\sw.jpg" width="16%">
+        <img src="C:\Users\91983\Desktop\WEBTech\red.jpg" width="16%"><br>
+        <!-- Audio player -->
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\bnb.mp3" type="audio/mp3">
+        </audio>
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\UD.mp3" type="audio/mp3">
+        </audio>
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\cd.mp3" type="audio/mp3">
+        </audio>
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\ad.mp3" type="audio/mp3">
+        </audio>
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\sw.mp3" type="audio/mp3">
+        </audio>
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\rd.mp3" type="audio/mp3">
+        </audio><br><br>
+               <img src="C:\Users\91983\Downloads\sb1.jpg" width="16%">
+        <img src="C:\Users\91983\Desktop\WEBTech\lmg.jpg" width="16%">
+        <img src="C:\Users\91983\Desktop\WEBTech\td.jpg" width="16%">
+        <img src="C:\Users\91983\Desktop\WEBTech\lmd.jpg" width="16%">
+        <img src="C:\Users\91983\Desktop\WEBTech\em.jpg" width="16%">
+        <img src="C:\Users\91983\Desktop\WEBTech\wg.jpg" width="16%"><br>  
+           <!-- Audio player -->
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\sb.mp3" type="audio/mp3">
+        </audio>
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\lm.mp3" type="audio/mp3">
+        </audio>
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\12.mp3" type="audio/mp3">
+        </audio>
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\mc.mp3" type="audio/mp3">
+        </audio>
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\es.mp3" type="audio/mp3">
+        </audio>
+        <audio controls>
+          <source src="C:\Users\91983\Downloads\ws.mp3" type="audio/mp3">
+        </audio> 
+      </div><br><br>
+      <a href="#more-stories">Click here for more stories</a><br><br><br>
+      <!-- Footer Section -->
+<footer>
+  
+   <p>Storytime Ltd, 26 Star Street, London UK. +44 (0) 7941 190 740. Main point of contact - bertie@Storytime.com.
+
+        Audio and texts are Copyright Storytime Ltd unless otherwise stated. Images are copyrighted to their owners. Many images on this site are licenced from Shutterstock.
+        
+        Our Terms and Conditions make it easy for schools to use our materials for free, please see our Copywrite Page for details
+        
+        You can review our privacy policy <br><br>
+       © 2024 Storytime. All rights reserved.</p>
+       <div class="footer-content">
+    <div class="social-icons">
+      <p>Connect with us</p><br>
+      <!-- Add social media icons here -->
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
